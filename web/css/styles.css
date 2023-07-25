@@ -1,0 +1,16 @@
+body {
+    background-color: gray;
+}
+
+.pass-container {
+    max-width: 900px;
+}
+
+.form-text {
+    font-size: 12px;
+}
+
+.card-body .row {
+    padding-left: 2px;
+    padding-right: 2px;
+}

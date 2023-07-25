@@ -1,0 +1,60 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Random Password Generator</span>
+    </div>
+</nav>
+
+<div class="container-fluid pass-container pt-4 px-sm-5">
+    <form class="card" method="post" action="/index">
+        <div class="card-header fw-bold fs-3 p-3">Random Password Generator</div>
+        <div class="card-body fw-medium">
+            <div class="row mx-sm-1 mb-4">
+                <div class="col-5 col-md-4 p-0 pt-2">Password Length</div>
+                <div class="col-7 col-md-8 ps-2 pe-0"><input name="pw-length" class="form-control" type="number" value="{{pwLength}}" min="4" max="16" step="1" required>
+                    <div class="form-text">Length is available between 4 ~ 16</div>
+                </div>
+            </div>
+            <div class="row mx-sm-1 mb-4">
+                <div class="col-5 col-md-4 p-0 align-items-center">Include Lowercase Characters</div>
+                <div class="col-7 col-md-8 ps-2 pe-0"><input id="pw-in-lower" name="pw-in-lower" type="checkbox" class="form-check-input" {{pwInLower}}>
+                    <label class="form-check-label" for="pw-in-lower"> (e.g. abcdefg)</label>
+                </div>
+            </div>
+            <div class="row mx-sm-1 mb-4">
+                <div class="col-5 col-md-4 p-0 align-items-center">Include Uppercase Characters</div>
+                <div class="col-7 col-md-8 ps-2 pe-0"><input id="pw-in-upper" name="pw-in-upper" type="checkbox" class="form-check-input" {{pwInUpper}}>
+                    <label class="form-check-label" for="pw-in-upper"> (e.g. ABCDEFG)</label>
+                </div>
+            </div>
+            <div class="row mx-sm-1 mb-4">
+                <div class="col-5 col-md-4 p-0 align-items-center">Include Numbers</div>
+                <div class="col-7 col-md-8 ps-2 pe-0"><input id="pw-in-num" name="pw-in-num" type="checkbox" class="form-check-input" {{pwInNum}}>
+                    <label class="form-check-label" for="pw-in-num"> (e.g. 123456)</label>
+                </div>
+            </div>
+            <div class="row mx-sm-1 mb-4">
+                <div class="col-5 col-md-4 p-0 align-items-center">Include Symbols</div>
+                <div class="col-7 col-md-8 ps-2 pe-0"><input id="pw-in-sym" name="pw-in-sym" type="checkbox" class="form-check-input" {{pwInSym}}>
+                    <label class="form-check-label" for="pw-in-sym"> (e.g. @#$%)</label>
+                </div>
+            </div>
+            <div class="row mx-sm-1 mb-4">
+                <div class="col-5 col-md-4 p-0 pt-2">Exclude Characters</div>
+                <div class="col-7 col-md-8 ps-2 pe-0"><input name="pw-ex-chars" class="form-control" type="text" value="{{pwExChars}}">
+                    <div class="form-text">These characters will not appear in the password</div>
+                </div>
+            </div>
+            <div class="row mx-sm-1 {{isResultVisible}}">
+                <div class="alert alert-info" role="alert">
+                    Your password is: <span class="text-danger">{{pwGen}}</span>
+                </div>
+            </div>
+            <div class="row mx-sm-1">
+                <span class="p-0"><button type="submit" class="btn btn-success">Generate Password</button></span>
+            </div>
+        </div>
+        <div class="card-footer text-body-secondary text-end p-3 fw-medium">
+            Idea is inspired by <span class="text-primary">Strong Random Password</span>
+        </div>
+    </form>
+</div>
